@@ -1,0 +1,162 @@
+html, body 
+{
+    margin: 0;
+    height: 100%;
+}
+
+.float_left
+{
+    float: left;
+}
+
+.all_screen
+{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.a_no_text_decor
+{
+    text-decoration: none;
+}
+
+.header_shape
+{
+    width: 100%;
+    height: 15%;
+    font: 24px/25px "Montserrat";
+    background-color: #00757c;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_title
+{
+    display: block;
+    padding: 2% 0;
+    margin: 0 0 0 5%;
+    height: 25px;
+}
+
+.navigation
+{
+    display: block;
+    width: 40%;
+}
+
+.nav_link
+{
+    font: bold 24px/25px "Montserrat";
+    text-decoration: none;
+    float: left;
+    list-style-type: none;
+    margin: 0 0 0 11%;
+}
+
+.regular_text_style
+{
+    font: 24px/29px "Montserrat";
+}
+
+.white_link
+{
+    color: #ffffff;
+}
+
+.greeting_block
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.greeting_text
+{
+    width: 60%;
+    margin: 3% 0 0 6%;
+}
+
+.greeting_img_block
+{
+    margin-top: 2%;
+    width: 40%;
+}
+
+.greeting_img
+{
+    width: 80%;
+}
+
+.history
+{
+    margin-top: 2%;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.history_block
+{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    
+}
+
+.darkened
+{
+    position: relative;
+}
+   
+.darkened::before 
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);  
+}
+
+.history_text
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer
+{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.footer_text
+{
+    display: block;
+    margin: 1.5% 0 0 6%;
+    height: auto;
+    font: 16px/18px "Montserrat";
+}
+
+.contacts_block
+{
+    width: 20%;
+}
+
+.contack_link
+{
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+
+.copyright
+{
+    margin-top: 6%;
+    font: bold 18px/22px "Montserrat";
+}
