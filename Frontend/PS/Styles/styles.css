@@ -59,9 +59,19 @@ html, body
     font: 24px/29px "Montserrat";
 }
 
+.bold_text_style
+{
+    font: bold 24px/29px "Montserrat";
+}
+
 .white_link
 {
     color: #ffffff;
+}
+
+.black_text
+{
+    color: #000000;
 }
 
 .greeting_block
@@ -128,6 +138,14 @@ html, body
     transform: translate(-50%, -50%);
 }
 
+.fixed_footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 .footer
 {
     display: flex;
@@ -159,4 +177,32 @@ html, body
 {
     margin-top: 6%;
     font: bold 18px/22px "Montserrat";
+}
+
+.event
+{
+    margin: 4% 7% 0 7%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.event_short_textblock
+{
+    width: 55%;
+    margin: 5% 0 ;
+}
+
+.event_img_div
+{
+    width: 35%;
+}
+
+.event_img
+{
+    width: 100%;
+}
+
+.reversed_event
+{
+    flex-direction: row-reverse;
 }
