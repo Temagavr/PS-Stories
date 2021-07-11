@@ -108,10 +108,9 @@ html, body
 .history_block
 {
     width: 100%;
-    height: 100%;
+    height: 99.5%;
     text-align: center;
     position: relative;
-    
 }
 
 .darkened
@@ -127,7 +126,14 @@ html, body
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5);  
+    background-color: rgba(0,0,0,0.5);
+    height: 99.5%;  
+}
+
+.history_img
+{
+    width: 100%;
+    height: auto;
 }
 
 .history_text
@@ -205,4 +211,103 @@ html, body
 .reversed_event
 {
     flex-direction: row-reverse;
+}
+
+.year_select_block
+{
+    margin: 3% 0 0 7%;
+}
+
+.graduates_images
+{
+    width: 90%;
+    margin: 2% auto 0 ;
+}
+
+.graduate_img
+{
+    height: 350px;
+    margin-left: 4%;
+}
+
+.graduates_border
+{
+    height: 3px;
+    background-color: #00757c;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 0;
+}
+
+.graduates_bacground_block
+{
+    background-color: #d6d6d6;
+}
+
+.graduates_block
+{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.graduates_header
+{
+    padding-top: 2%;
+}
+
+.graduates_title
+{
+    font: 18px/22px "Montserrat";
+    margin: 0 0 0 4%;
+}
+
+.graduates_list_border
+{
+    margin: 0;
+    border-radius: 5px;
+}
+
+.graduates_list
+{
+    width: 85%;
+    margin: 2% auto 0;
+    padding-bottom: 2%;
+}
+
+.graduates_list_head
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1%;
+}
+
+.graduates_heading
+{
+    display: block;
+    font: 14px/17px "Montserrat";
+    color: #00757c;
+}
+
+.graduates_list_content
+{
+    margin-top: 1.5%;
+}
+
+.graduate
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+.graduate_info
+{
+    display: block;
+    font: 14px/17px "Montserrat";
+    padding: 7px 10px;
+    width: 175px;
 }
