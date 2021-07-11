@@ -42,6 +42,8 @@ html, body
 .navigation
 {
     display: block;
+    height: 25px;
+    margin: 2% 0;
     width: 40%;
 }
 
@@ -220,14 +222,15 @@ html, body
 
 .graduates_images
 {
-    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    width: 84%;
     margin: 2% auto 0 ;
 }
 
 .graduate_img
 {
     height: 350px;
-    margin-left: 4%;
 }
 
 .graduates_border
