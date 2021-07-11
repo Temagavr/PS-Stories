@@ -225,12 +225,18 @@ html, body
     display: flex;
     justify-content: space-between;
     width: 84%;
-    margin: 2% auto 0 ;
+    margin: 2% auto 0;
+}
+
+.graduate_img_block
+{
+    height: 20%;
+    text-align: center;
 }
 
 .graduate_img
 {
-    height: 350px;
+    width: 90%;
 }
 
 .graduates_border

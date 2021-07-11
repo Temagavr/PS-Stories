@@ -5,9 +5,15 @@
                 <span class="regular_text_style">Год выпуска: </span>
             </div>
             <div class="graduates_images">
-                <img class="graduate_img" src="../src/assets/temp_images/graduates_plug.jpg" alt="">
-                <img class="graduate_img" src="../src/assets/temp_images/plug.jpg" alt="">                
-                <img class="graduate_img" src="../src/assets/temp_images/graduates_plug.jpg" alt="">
+                <div class="graduate_img_block">
+                    <img class="graduate_img" src="../src/assets/temp_images/graduates_plug.jpg" alt="">
+                </div>
+                <div class="graduate_img_block">
+                    <img class="graduate_img" src="../src/assets/temp_images/plug.jpg" alt="">
+                </div>           
+                <div class="graduate_img_block">
+                    <img class="graduate_img" src="../src/assets/temp_images/graduates_plug.jpg" alt="">
+                </div>
             </div>
             <hr class="graduates_border"/>
         </div>
