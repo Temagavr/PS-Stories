@@ -203,7 +203,7 @@ html, body
     width: 35%;
 }
 
-.event_img
+.event_short_img
 {
     width: 100%;
 }
@@ -310,4 +310,48 @@ html, body
     font: 14px/17px "Montserrat";
     padding: 7px 10px;
     width: 175px;
+}
+
+.event_imgs
+{
+    width: 80%;
+    margin: 3% auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.event_main_img_block
+{
+    width: 43%;
+}
+
+.event_imgs_block
+{
+    width: 43%;
+}
+
+.event_main_img
+{
+    width: 100%;
+}
+
+.extra_imgs_table
+{
+    border: 0;
+}
+
+.event_extra_img_block
+{
+    width: 20%;
+}
+
+.event_extra_img
+{
+    width: 95%;
+}
+
+.event_info
+{
+    width: 65%;
+    margin: 3% 9.8% 0;
 }
