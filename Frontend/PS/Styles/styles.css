@@ -197,7 +197,7 @@ html, body
 .event_short_textblock
 {
     width: 55%;
-    margin: 5% 0 ;
+    margin: 5% 0;
 }
 
 .event_img_div
@@ -363,4 +363,78 @@ html, body
 {
     width: 65%;
     margin: 3% 9.8% 0;
+}
+
+.year_selection_label
+{
+    display: block;
+}
+
+.year_selection ul {
+	margin: 0 0 0 2%;
+	padding-left: 0;
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+
+.year_selection ul ul {
+	display: none;
+}
+
+.year_selection ul li:hover > ul {
+	display: block;
+}
+
+.year_selection ul li {
+	float: left;
+	width: 100%;
+	text-align: left; 
+}
+	
+.year_selection ul ul li:hover {
+	text-decoration: underline #00757c;
+}
+
+.year_selection ul li span {
+	display: block; 
+    cursor: pointer;
+}
+					
+.year_selection ul ul {
+	border-radius: 0px; 
+	padding: 0;
+	position: absolute; 
+	top: 100%;
+}
+
+.year_selection ul ul li {
+	float: none;
+	position: relative;
+}
+
+.year_selection ul ul li span {
+	color: #000000;
+}	
+
+/* .year_selection ul ul li span:hover {
+	background: #00757c;
+	color: #fff;
+}	 */
+
+#down-triangle {
+	float: right;
+	width: 0; 
+ 	height: 0;
+ 	margin-top: 10px;
+    margin-left: 15px;
+ 	border-top: 10px solid #00757c;
+    border-left: 10px solid transparent; 
+    border-right: 10px solid transparent; 
+}
+
+.year_selected
+{
+    text-decoration: underline #00757c;
+    color: #00757c;
 }

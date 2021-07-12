@@ -2,7 +2,16 @@
     <div>
         <div>
             <div class="year_select_block">
-                <span class="regular_text_style">Год выпуска: </span>
+                <span class="regular_text_style year_selection_label float_left">Год выпуска: </span>
+                <div class="year_selection">
+                    <ul>
+		                <li><span class="year_selected regular_text_style">{{selected_year}}<div id="down-triangle"></div></span>
+			                <ul>
+				                <li><span v-on:click="changeYear(previous_year)" class="regular_text_style">{{previous_year}}</span></li>
+				            </ul>
+		                </li>
+	                </ul>
+                </div>
             </div>
             <div class="graduates_images">
                 <div class="graduate_img_block">
@@ -46,10 +55,19 @@ import graduate from "./GraduateInfo.vue";
 
 export default {
     data() {
-        return {};
+        return {
+            selected_year: '2016',
+            previous_year: '2000'
+        };
     },
     components: {
         "graduate": graduate
+    },
+    methods: {
+        changeYear: function(year) {
+            this.previous_year = this.selected_year;
+            this.selected_year = year;
+        }
     }
 }
 </script>
