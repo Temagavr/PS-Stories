@@ -3,6 +3,8 @@ import Vue from 'vue';
 
 import styles from './styles.css'
 
+import adaptive_styles from './adaptive_styles.css'
+
 import Routes from './PS/Router';
 
 import App from './components/App';
