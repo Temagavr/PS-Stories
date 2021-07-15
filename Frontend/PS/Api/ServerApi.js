@@ -1,8 +1,8 @@
-// import axios from 'axios'
+import axios from 'axios'
 
 export default class ServerApi
 {
-    getGraduates(year)
+    async getGraduates(year)
     {
         // let response = await fetch('', {
         //     method: 'GET',

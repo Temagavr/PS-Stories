@@ -119,8 +119,8 @@ export default {
         "modal": modal
     },
     methods: {
-        getGraduatesInfo: function() {
-            this.graduates_info = this.store.getGraduatesList(this.selected_year);
+        getGraduatesInfo: async function() {
+            this.graduates_info = await this.store.getGraduatesList(this.selected_year);
         },
 
         changeYear: function(year) {

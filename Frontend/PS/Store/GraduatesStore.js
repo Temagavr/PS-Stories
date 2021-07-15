@@ -8,9 +8,9 @@ export default class GraduatesStore
     }
 
 
-    getGraduatesList(year)
+    async getGraduatesList(year)
     {
-        const response = this._serverApi.getGraduates(year);
+        const response = await this._serverApi.getGraduates(year);
 
         if(response)
             return response;
