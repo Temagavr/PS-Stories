@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="header_container">
         <header class="header_shape">
             <a class="main_title a_no_text_decor white_link" href="/home">История ПС</a>
             <ul class="navigation">

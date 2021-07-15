@@ -1,15 +1,22 @@
 <template>
   <div>
-    <router-view class="all_screen"></router-view>
+    <router-view v-bind:factory="factory" class="all_screen"></router-view>
   </div>
 </template>
 
 <script>
+import ServerApi from '../Api/ServerApi';
+import StoreFactory from '../Factory/StoreFactory';
+
+const serverApi = new ServerApi();
+const storeFactory = new StoreFactory(serverApi);
+
 export default {
   name: 'app',
   data () {
     return {
-      msg: ''
+      msg: '',
+      factory: storeFactory
     }
   }
 }

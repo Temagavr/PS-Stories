@@ -13,6 +13,7 @@ import footer from "../components/Footer.vue";
 
 
 export default {
+    props: ['factory'],
     data() {
         return{}
     },

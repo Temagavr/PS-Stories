@@ -12,6 +12,7 @@ import homeContent from "../components/HomeContent.vue";
 import footer from "../components/Footer.vue";
 
 export default {
+    props: ['factory'],
     data() {
         return{}
     },

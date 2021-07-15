@@ -15,10 +15,11 @@ export default {
   name: "App",
   data() {
     return {
-      factory: tempFactory
+      
     }
   },
   components: {
+  
   }
 }
 </script>

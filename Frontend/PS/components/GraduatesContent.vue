@@ -25,7 +25,7 @@
                     <span class="more_graduates_photo_title regular_text_style white_link">+{{graduates_cont[selected_year].images.length - 2}}</span>
                 </div>
                 <div class="graduate_img_block" v-if="graduates_cont[selected_year].images.length == 3">
-                    <img class="graduate_img" :src='graduates_cont[selected_year].image[2]' alt=""/>
+                    <img class="graduate_img" :src='graduates_cont[selected_year].images[2]' alt=""/>
                 </div>
             </div>
             <hr class="graduates_border"/>
@@ -40,7 +40,6 @@
                     <div class="graduates_list_head">
                         <span class="graduates_heading">ФИО</span>
                         <span class="graduates_heading">Email</span>
-                        <span class="graduates_heading">Соцсети</span>
                     </div>
                     <div class="graduates_list_content">
                         <graduate v-for="grad in this.graduates_cont[selected_year].graduates" v-bind:graduate_info="grad"></graduate>
@@ -57,8 +56,12 @@ import graduate from './GraduateInfo.vue';
 import modal from './ModalMorePhoto.vue';
 
 export default {
+    props: ['factory'],
     data() {
         return {
+            store: this.factory.createGraduatesStore(),
+            graduates_info: [],
+
             selected_year: '2016',
             previous_year: '2000',
             img_index: 0,
@@ -116,15 +119,25 @@ export default {
         "modal": modal
     },
     methods: {
+        getGraduatesInfo: function() {
+            this.graduates_info = this.store.getGraduatesList(this.selected_year);
+        },
+
         changeYear: function(year) {
             this.previous_year = this.selected_year;
             this.selected_year = year;
             this.img_index = 0;
+
+            this.getGraduatesInfo();
         },
         switchModalFlag: function() {
             if(this.graduates_cont[this.selected_year].images.length > 3)
                 this.modalFlag = !this.modalFlag;
         }
+    },
+
+    beforeMount() {
+        this.getGraduatesInfo();
     }
 }
 </script>

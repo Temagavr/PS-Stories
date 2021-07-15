@@ -1,7 +1,7 @@
 <template>
     <div>
         <app-header></app-header>
-        <graduates></graduates>
+        <graduates v-bind:factory="factory"></graduates>
         <app-footer></app-footer>
     </div>
 </template>
@@ -13,6 +13,7 @@ import footer from "../components/Footer.vue";
 
 
 export default {
+    props: ['factory'],
     data() {
         return{}
     },
