@@ -1,4 +1,6 @@
 import GraduatesStore from "../Store/GraduatesStore";
+import EventInfoStore from "../Store/EventInfoStore";
+import EventsListStore from "../Store/EventsListStore";
 
 export default class StoreFactory
 {
@@ -12,5 +14,15 @@ export default class StoreFactory
     createGraduatesStore()
     {
         return new GraduatesStore(this._serverApi);
+    }
+
+    createEventInfoStore()
+    {
+        return new EventInfoStore(this._serverApi);
+    }
+
+    createEventsListStore()
+    {
+        return new EventsListStore(this._serverApi);
     }
 }

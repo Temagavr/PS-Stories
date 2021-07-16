@@ -1,0 +1,127 @@
+@media screen and (min-device-width : 320px) and (max-device-width : 767px)
+{
+    .header_container
+    {
+        height: 100px;
+    }
+
+    .main_title
+    {
+        padding: 3.5% 0;
+    }
+
+    .header_shape
+    {
+        height: 100%;
+    }
+
+    .navigation
+    {
+        display: none;
+    }
+
+    .navigation_adapt_block
+    {
+        display: block;
+        margin: 3.5%;
+    }
+
+    /* .navigation_adapt
+    {
+        display: block;
+    } */
+
+    .greeting_text
+    {
+        width: 90%;
+        margin: 3% auto 0;
+    }
+
+    .regular_text_style
+    {
+        font: 29px/30px "Montserrat";
+    }
+
+    .greeting_img_block
+    {
+        display: none;
+    }
+
+    .graduates_images
+    {
+        justify-content: center;
+    }
+
+    .graduate_img_block
+    {
+        display: none;
+    }
+
+    .graduate_img_block_mobile
+    {
+        display: block;
+    }
+
+    .graduates_title
+    {
+        font: 24px/26px "Montserrat";
+    }
+
+    .graduates_heading
+    {
+        font: 20px/22px "Montserrat";
+    }
+
+    .email_heading
+    {
+        display: none;
+    }
+
+    .graduate
+    {
+        height: 50px;
+    }
+
+    .graduate_info
+    {
+        font: 24px/26px "Montserrat";
+        padding: 12px 10px;
+    }
+
+    .email_info
+    {
+        display: none;
+    }
+
+    .modal_content
+    {
+        margin: 6.5% auto;
+        width: 70%;
+        height: 80vh;
+    }
+
+    .footer_text
+    {
+        font: 24px/26px "Montserrat";
+    }
+
+    .copyright
+    {
+        font: bold 26px/28px "Montserrat";
+    }
+}
+
+@media screen and (min-device-width : 768px) and (max-device-width : 1023px)
+{
+
+}
+
+@media screen and (min-device-width : 1024px) and (max-device-width : 1439px)
+{
+    
+}
+
+@media screen and (min-device-width : 1440px) and (max-device-width : 2560px)
+{
+    
+}

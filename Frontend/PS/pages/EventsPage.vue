@@ -1,7 +1,7 @@
 <template>
     <div>
         <app-header></app-header>
-        <events></events>
+        <events v-bind:factory="factory"></events>
         <app-footer></app-footer>
     </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="graduate">
       <span class="graduate_info">{{graduate_info.name}}</span>
-      <span class="graduate_info">{{graduate_info.email}}</span>
+      <span class="graduate_info email_info">{{graduate_info.email}}</span>
   </div>
 </template>
 

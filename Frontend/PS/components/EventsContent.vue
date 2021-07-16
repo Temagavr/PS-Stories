@@ -10,11 +10,23 @@
 import event from "./Event.vue";
 
 export default {
+    props: ['factory'],
     data() {
-        return{}
+        return{
+            store: this.factory.createEventsListStore(),
+            eventsList: []
+        }
+    },
+    methods: {
+        getEvents: async function() {
+            this.eventsList = await this.store.getEventsList();
+        }
     },
     components: {
         "event": event
+    },
+    async beforeMount() {
+        await this.getEvents();
     }
 }
 </script>

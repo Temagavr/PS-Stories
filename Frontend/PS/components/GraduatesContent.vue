@@ -20,7 +20,7 @@
                 <div class="graduate_img_block">
                     <img class="graduate_img" :src='graduates_cont[selected_year].images[1]' alt=""/>
                 </div>           
-                <div v-on:click="switchModalFlag()" class="graduate_img_block darkened more_graduates_photo" v-if="graduates_cont[selected_year].images.length > 3">
+                <div v-on:click="switchModalFlag()" class="graduate_img_block graduate_img_block_mobile darkened more_graduates_photo" v-if="graduates_cont[selected_year].images.length > 3">
                     <img class="graduate_img max_width" :src="graduates_cont[selected_year].images[2]" alt=""/>
                     <span class="more_graduates_photo_title regular_text_style white_link">+{{graduates_cont[selected_year].images.length - 2}}</span>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="graduates_list">
                     <div class="graduates_list_head">
                         <span class="graduates_heading">ФИО</span>
-                        <span class="graduates_heading">Email</span>
+                        <span class="graduates_heading email_heading">Email</span>
                     </div>
                     <div class="graduates_list_content">
                         <graduate v-for="grad in this.graduates_cont[selected_year].graduates" v-bind:graduate_info="grad"></graduate>
@@ -136,8 +136,8 @@ export default {
         }
     },
 
-    beforeMount() {
-        this.getGraduatesInfo();
+    async beforeMount() {
+        await this.getGraduatesInfo();
     }
 }
 </script>
