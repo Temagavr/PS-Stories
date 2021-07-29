@@ -113,15 +113,36 @@
 
 @media screen and (min-device-width : 768px) and (max-device-width : 1023px)
 {
+    .darkened::before
+    {
+        height: 99%;
+    }
 
+    .year_select
+    {
+        width: 9%;
+    }
 }
 
 @media screen and (min-device-width : 1024px) and (max-device-width : 1439px)
 {
-    
+
 }
 
 @media screen and (min-device-width : 1440px) and (max-device-width : 2560px)
 {
-    
+    .darkened::before
+    {
+        height: 99%;
+    }
+
+    .navigation
+    {
+        width: 32%;
+    }
+
+    .year_select
+    {
+        width: 7%;
+    }
 }

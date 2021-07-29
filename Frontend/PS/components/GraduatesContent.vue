@@ -4,28 +4,31 @@
             <div class="year_select_block">
                 <span class="regular_text_style year_selection_label float_left">Год выпуска: </span>
                 <div class="year_selection">
-                    <ul>
+                    <select v-model="selected_year" class="regular_text_style year_select">
+                        <option class="regular_text_style" v-for="year in graduate_years" :value="year.year">{{year.year}}</option>
+                    </select>
+                    <!-- <ul>
 		                <li><span class="year_selected regular_text_style">{{selected_year}}<div id="down-triangle"></div></span>
 			                <ul>
-				                <li><span v-on:click="changeYear(previous_year)" class="regular_text_style">{{previous_year}}</span></li>
+				                <li><span v-for="year in graduate_years" v-on:click="changeYear(year.year)" class="regular_text_style">{{year.year}}</span></li>
 				            </ul>
 		                </li>
-	                </ul>
+	                </ul> -->
                 </div>
             </div>
-            <div class="graduates_images" v-if="graduates_cont[selected_year].images.length >= 3">
+            <div class="graduates_images" v-if="imagesCount >= 3">
                 <div class="graduate_img_block">
-                    <img class="graduate_img" :src='graduates_cont[selected_year].images[0]' alt=""/>
+                    <img class="graduate_img" :src='pathExtra + graduates_info.images[0].path' alt=""/>
                 </div>
                 <div class="graduate_img_block">
-                    <img class="graduate_img" :src='graduates_cont[selected_year].images[1]' alt=""/>
+                    <img class="graduate_img" :src='pathExtra + graduates_info.images[1].path' alt=""/>
                 </div>           
-                <div v-on:click="switchModalFlag()" class="graduate_img_block graduate_img_block_mobile darkened more_graduates_photo" v-if="graduates_cont[selected_year].images.length > 3">
-                    <img class="graduate_img max_width" :src="graduates_cont[selected_year].images[2]" alt=""/>
-                    <span class="more_graduates_photo_title regular_text_style white_link">+{{graduates_cont[selected_year].images.length - 2}}</span>
+                <div v-on:click="switchModalFlag()" class="graduate_img_block graduate_img_block_mobile darkened more_graduates_photo" v-if="imagesCount > 3">
+                    <img class="graduate_img max_width" :src="pathExtra + graduates_info.images[2].path" alt=""/>
+                    <span class="more_graduates_photo_title regular_text_style white_link">+{{imagesCount - 2}}</span>
                 </div>
-                <div class="graduate_img_block" v-if="graduates_cont[selected_year].images.length == 3">
-                    <img class="graduate_img" :src='graduates_cont[selected_year].images[2]' alt=""/>
+                <div class="graduate_img_block" v-if="imagesCount == 3">
+                    <img class="graduate_img" :src='pathExtra + graduates_info.images[2].path' alt=""/>
                 </div>
             </div>
             <hr class="graduates_border"/>
@@ -42,12 +45,12 @@
                         <span class="graduates_heading email_heading">Email</span>
                     </div>
                     <div class="graduates_list_content">
-                        <graduate v-for="grad in this.graduates_cont[selected_year].graduates" v-bind:graduate_info="grad"></graduate>
+                        <graduate v-for="grad in this.graduates_info.graduates" v-bind:graduate_info="grad"></graduate>
                     </div>
                 </div>
             </div>
         </div>
-        <modal v-bind:photos="graduates_cont[selected_year].images" v-bind:showFlag="modalFlag" v-on:closeModal="switchModalFlag()"></modal>
+        <modal v-bind:photos="graduates_info.images" v-bind:showFlag="modalFlag" v-on:closeModal="switchModalFlag()"></modal>
     </div>
 </template>
 
@@ -59,59 +62,16 @@ export default {
     props: ['factory'],
     data() {
         return {
-            store: this.factory.createGraduatesStore(),
+            graduates_store: this.factory.createGraduatesStore(),
+            graduate_years_store: this.factory.createGraduateYearsListStore(),
             graduates_info: [],
+            graduate_years: [],
 
-            selected_year: '2016',
-            previous_year: '2000',
+            selected_year: 0,
             img_index: 0,
             modalFlag: false,
-            graduates_cont: {
-                2016: { graduates:[
-                    { name: 'Бирюков Сергей', email: 'temp222@mail.com'},
-                    { name: 'Гаврилин Артем', email: 'temp@mail.com'},
-                    { name: 'Губин Сергей', email: 'temp1234421321@mail.com'},
-                    { name: 'Дехант Александр', email: 'temp202020@mail.com'},
-                    { name: 'Дубникова Дарья', email: 'ddsad@mail.com'},
-                    { name: 'Ибатуллина Мария', email: 'teqwe@mail.com'},
-                    { name: 'Красильников Илья', email: 'temasd@mail.com'},
-                    { name: 'Макеров Вадим', email: 'temp789@mail.com'}
-                    ],
-                    images: [
-                        '../src/assets/temp_images/2016/1.jpg', 
-                        '../src/assets/temp_images/2016/2.jpg', 
-                        '../src/assets/temp_images/2016/3.jpg', 
-                        '../src/assets/temp_images/2016/4.jpg', 
-                        '../src/assets/temp_images/2016/5.jpg', 
-                        '../src/assets/temp_images/2016/6.jpg', 
-                        '../src/assets/temp_images/2016/7.jpg'
-                    ]
-                },
-                2000: { graduates:[
-                    { name: 'Акимова Татьяна', email: 'pop@mail.ruru'},
-                    { name: 'Булатников Сергей', email: 'temp@mail.com'},
-                    { name: 'Дудин Николай', email: 'temp1234421321@mail.com'},
-                    { name: 'Ельмихеев Александр', email: 'temp222@mail.com'},
-                    { name: 'Канюшкова Мария', email: 'temp@mail.com'},
-                    { name: 'Лаптев Роман', email: 'temp1234421321@mail.com'},
-                    { name: 'Лер Георгий', email: 'temp222@mail.com'},
-                    { name: 'Ложечников Максим', email: 'temp@mail.com'},
-                    { name: 'Макарова Ольга', email: 'temp1234421321@mail.com'},
-                    { name: 'Махнев Андрей', email: 'temp222@mail.com'},
-                    { name: 'Стрельников Владислав', email: 'temp@mail.com'},
-                    { name: 'Тимаков Никита', email: 'temp1234421321@mail.com'},
-                    { name: 'Ямбулатов Роман', email: 'temp222@mail.com'}
-                ],
-                    images: [
-                        '../src/assets/temp_images/2000/1.jpg', 
-                        '../src/assets/temp_images/2000/2.jpg', 
-                        '../src/assets/temp_images/2000/3.jpg', 
-                        '../src/assets/temp_images/2000/4.jpg', 
-                        '../src/assets/temp_images/2000/5.jpg', 
-                        '../src/assets/temp_images/2000/6.jpg'
-                    ] 
-                }
-            }
+            imagesCount: 0,
+            pathExtra: 'PhotoLoadScript/PhotoLoadScript/bin/Debug/net5.0/'
         };
     },
     components: {
@@ -120,24 +80,36 @@ export default {
     },
     methods: {
         getGraduatesInfo: async function() {
-            this.graduates_info = await this.store.getGraduatesList(this.selected_year);
-        },
+            this.graduates_info = await this.graduates_store.getGraduatesList(this.selected_year);
 
+            this.imagesCount = this.graduates_info.images.length;
+        },
+        getGraduateYears: async function() {
+            this.graduate_years = await this.graduate_years_store.getGraduateYears();
+            this.selected_year = this.graduate_years[0].year;
+        },
         changeYear: function(year) {
-            this.previous_year = this.selected_year;
             this.selected_year = year;
             this.img_index = 0;
 
             this.getGraduatesInfo();
         },
         switchModalFlag: function() {
-            if(this.graduates_cont[this.selected_year].images.length > 3)
+            if(this.graduates_info.images.length > 3)
                 this.modalFlag = !this.modalFlag;
         }
     },
-
+    computed: {
+        GraduatesInfoComp: async function() {
+            await this.getGraduatesInfo();
+        }
+    },
     async beforeMount() {
+        await this.getGraduateYears();
         await this.getGraduatesInfo();
+    },
+    async beforeUpdate() {
+        await this.GraduatesInfoComp;
     }
 }
 </script>

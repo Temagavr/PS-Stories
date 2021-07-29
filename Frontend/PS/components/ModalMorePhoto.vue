@@ -5,7 +5,7 @@
 		        <span v-on:click="closeModal()" class="close" >&times;</span>
             </div>
             <div>
-                <img class="modal_photo" v-for="photo in photos" :key="photo" :src='photo' alt="Sorry"/>
+                <img class="modal_photo" v-for="photo in photos" :src='pathExtra + photo.path' alt="Sorry"/>
             </div>
         </div>
     </div>
@@ -15,7 +15,9 @@
 export default {
     props: ['photos', 'showFlag'],
     data() {
-        return {}
+        return {
+            pathExtra: 'PhotoLoadScript/PhotoLoadScript/bin/Debug/net5.0/'
+        }
     },
     methods: {
         closeModal: function() {
